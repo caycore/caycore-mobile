@@ -4,13 +4,11 @@ import {
 
 export default StyleSheet.create({
     container: {
-        flex: 1
-    },
-    searchContainer: {
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        width: "100%"
     },
-    searchBar: {
+    title: {
         flex: 1
     }
 });

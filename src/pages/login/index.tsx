@@ -21,9 +21,11 @@ import {
 import md5 from "md5";
 
 const Login = ({
-    navigation
+    navigation,
+    route
 }: {
     navigation: CompositeScreenProps<any, any>["navigation"];
+    route: CompositeScreenProps<any, any>["route"];
 }) => {
     const {
         spaces,
@@ -125,7 +127,9 @@ const Login = ({
                     .then((res) => {
                         if(res.code === 200) {
                             Toast.show(res.message, Toast.SHORT);
-                            navigation.navigate("Home");
+                            console.error(res.payload);
+                            route.params.setIsAuth(true);
+                            navigation.navigate("App");
                         } else {
                             throw res;
                         }
