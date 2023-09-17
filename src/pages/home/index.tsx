@@ -2,14 +2,14 @@ import React, {
     useEffect
 } from "react";
 import {
-    View,
-    Text
+    View
 } from "react-native";
 import {
     CompositeScreenProps
 } from "@react-navigation/native";
 import {
-    Button
+    Button,
+    Text
 } from "ncore-mobile";
 
 const Home = ({
@@ -19,7 +19,13 @@ const Home = ({
 }) => {
     useEffect(() => {
         navigation.setOptions({
-            title: "Ana Sayfa234 23423",
+            headerTitle: () => {
+                return <Text
+                    variant="header5"
+                >
+                    Ana Sayfa234 23423
+                </Text>;
+            },
             headerLeft: () => {
                 return <View>
                     <Button
@@ -28,8 +34,9 @@ const Home = ({
                             navigation.goBack();
                         }}
                     />
-                </View>
-            }
+                </View>;
+            },
+            headerBackVisible: false
         });
     }, []);
 
